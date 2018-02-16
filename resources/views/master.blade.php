@@ -7,22 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>My Website</title>
-        <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
-        <script>
 
-          // Enable pusher logging - don't include this in production
-          Pusher.logToConsole = true;
-
-          var pusher = new Pusher('681fd2258ac76e198d48', {
-            cluster: 'ap2',
-            encrypted: true
-          });
-
-          var channel = pusher.subscribe('my-channel');
-          channel.bind('my-event', function(data) {
-            alert(data.message);
-          });
-        </script>
         <link href="{{ URL::asset('/css/style.css') }}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://www.expertphp.in/css/bootstrap.css" type="text/css" media="all" />
         <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.css">
@@ -214,44 +199,8 @@
         		</ul>
         		<a href="#" class="close-link"><i class="arrow_up"></i></a>
         	</div>
-        	<!-- Scripts -->
-          <!-- <script>
-      function initMap() {
-        var uluru = {lat: -25.363, lng: 131.044};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: uluru
-        });
-        var marker = new google.maps.Marker({
-          position: uluru,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBa4BWsOe_0FXUh21yqV7i3Wk4H1B7-Vlg&callback=initMap">
-    </script> -->
-        	<!-- Scripts -->
-            <script>
-              @if(Session::has('$notification'))
-                var type = "{{ Session::get('alert-type', 'info') }}";
-                switch(type){
-                    case 'info':
-                        toastr.info("{{ Session::get('message') }}");
-                        break;
 
-                    case 'warning':
-                        toastr.warning("{{ Session::get('message') }}");
-                        break;
-                    case 'success':
-                        toastr.success("{{ Session::get('message') }}");
-                        break;
-                    case 'error':
-                        toastr.error("{{ Session::get('message') }}");
-                        break;
-                }
-              @endif
-            </script>
+
           <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -262,28 +211,7 @@
         	<script src="js/typewriter.js"></script>
         	<script src="js/jquery.onepagenav.js"></script>
         	<script src="js/main.js"></script>
-            <script>
-              @if(Session::has('message'))
-                var type = "{{ Session::get('alert-type', 'info') }}";
-                switch(type){
-                    case 'info':
-                        toastr.info("{{ Session::get('message') }}");
-                        break;
-
-                    case 'warning':
-                        toastr.warning("{{ Session::get('message') }}");
-                        break;
-
-                    case 'success':
-                        toastr.success("{{ Session::get('message') }}");
-                        break;
-
-                    case 'error':
-                        toastr.error("{{ Session::get('message') }}");
-                        break;
-                }
-              @endif
-            </script>
+        
         </body>
 
         </html>
